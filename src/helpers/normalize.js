@@ -189,7 +189,6 @@ const prepareEditorContentNode = ({
   gatsbyHelpers
 }) => {
   const mediaType = DATAFIELD_TO_MEDIATYPE[fieldType]
-  const id = `flamelink-content-${mediaType}-${nodeId}-${index}`
 
   if (!mediaType) {
     gatsbyHelpers.reporter.warn(`No media type found for field type: ${fieldType}.`)
