@@ -23,20 +23,22 @@
   "deprecated": false,
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
-    "prepare": "cross-env NODE_ENV=production npm run build",
+    "prepare": "yarn run snyk-protect && cross-env NODE_ENV=production npm run build",
     "dev": "babel -w src --out-dir . --ignore **/__tests__",
     "lint": "eslint ./src --cache",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@babel/runtime": "7.7.7",
     "compose-then": "1.0.1",
     "debug": "4.1.1",
-    "firebase-admin": "8.9.0",
+    "firebase-admin": "9.0.0",
     "flamelink": "1.0.0-alpha.28",
     "lodash": "4.17.15",
     "pascalcase": "1.0.0",
-    "present": "1.0.0"
+    "present": "1.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/cli": "7.7.7",
@@ -55,5 +57,6 @@
   "peerDependencies": {
     "gatsby": "^2.3.x",
     "gatsby-source-filesystem": "^2.x.x"
-  }
+  },
+  "snyk": true
 }
